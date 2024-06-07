@@ -40,7 +40,7 @@ export class SearchComponent implements OnInit{
       this.searchResults = [];
       return;
     }
-    this.http.get<any>(`http://localhost:8080/api/movies/search?title=${this.searchTerm}`)
+    this.http.get<any>(`https://getmovies-render.onrender.com/api/movies/search?title=${this.searchTerm}`)
       .subscribe(
         (response) => {
           this.searchResults = response;
