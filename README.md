@@ -60,3 +60,5 @@ Movie App is a web application that allows users to browse, search, and add movi
    git clone https://github.com/edwinlinson/getMoviesFrontend 
    cd movie-app-backend
 You can find **Back end source code at** https://github.com/edwinlinson/GetMovies
+
+**Hosted at https://get-movies-frontend-szms.vercel.app** Click [here](https://get-movies-frontend-szms.vercel.app) to visit the deployed Get Movies application.
