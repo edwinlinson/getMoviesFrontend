@@ -1,5 +1,7 @@
 # 🎬 Movie App
 
+Front end hosted at **Vercel** and backend hosted at **Render**, by dockerised container.
+
 **Hosted at https://get-movies-frontend-szms.vercel.app** 
 
 Click [here](https://get-movies-frontend-szms.vercel.app) to visit the deployed Get Movies application.
