@@ -1,0 +1,75 @@
+
+<div class="navigation-wrapper d-flex" >
+    <div class="keen-slider keen-slider--vertical" style="height: 500px; border-radius: 50px; width: 87%;" #sliderRef>
+      <div class="keen-slider__slide number-slide1" style="background-image: url('../../../assets/8652633.jpg');">
+          <div class="slide-info">
+              <h2 class="movie-title">Spider-Man: Across <br> the Spider-Verse</h2>
+              <p class="movie-description">IT’S HOW YOU WEAR THE MASK THAT MATTERS <br>
+                After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse’s very existence. </p>
+                <a class="trailer-link" href="https://youtu.be/yFrxzaBLDQM?si=dZOqH6FTyk_Ek3Rx" target="_blank">▶️ Watch Trailer</a>
+                <a class="trailer-link" href="https://letterboxd.com/film/spider-man-across-the-spider-verse/" target="_blank">📖 Read Letterboxd Reviews</a>
+          </div>
+      </div>
+      <div class="keen-slider__slide number-slide2" style="background-image: url('../../../assets/cropped-3840-2160-1319314.jpeg');">
+          <div class="slide-info">
+              <h2 class="movie-title">Dune: Part Two</h2>
+              <p class="movie-description"> LONG LIVE THE FIGHTERS.<br> Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. </p>
+              <a class="trailer-link" href="https://youtu.be/U2Qp5pL3ovA" target="_blank">▶️ Watch Trailer</a>
+              <a class="trailer-link" href="https://letterboxd.com/film/dune-part-two/" target="_blank">📖 Read Letterboxd Reviews</a>          </div>
+      </div>
+      <div class="keen-slider__slide number-slide3" style="background-image: url('../../../assets/13705905.jpg');">
+          <div class="slide-info">
+              <h2 class="movie-title">Furiosa: A Mad Max Saga</h2>
+              <p class="movie-description">FURY IS BORN.<br>As the world fell, young Furiosa is snatched from the Green Place of Many Mothers and falls into the hands of a great Biker Horde led by the Warlord Dementus. Sweeping through the Wasteland they come across the Citadel presided over by The Immortan Joe.</p>
+              <a class="trailer-link" href="https://www.youtube.com/embed/LYV3001u574?rel=0&wmode=transparent" target="_blank">▶️ Watch Trailer</a>
+              <a class="trailer-link" href="https://letterboxd.com/film/furiosa-a-mad-max-saga/" target="_blank">📖 Read Letterboxd Reviews</a>
+          </div>
+      </div>
+      <div class="keen-slider__slide number-slide4" style="background-image: url('../../../assets/blade-runner-2049-1200-1200-675-675-crop-000000.jpg');">
+          <div class="slide-info">
+              <h2 class="movie-title">Blade Runner 2049</h2>
+              <p class="movie-description">THE KEY TO THE FUTURE IS FINALLY UNEARTHED.<br>Thirty years after the events of the first film, a new blade runner, LAPD Officer K, unearths a long-buried secret that has the potential to plunge what’s left of society into chaos</p>
+              <a class="trailer-link" href="https://youtu.be/geFtxCSz8xI" target="_blank">▶️ Watch Trailer</a>
+              <a class="trailer-link" href="https://letterboxd.com/film/blade-runner-2049/" target="_blank">📖 Read Letterboxd Reviews</a>          </div>
+      </div>
+  </div>
+
+    <svg
+      [ngClass]="
+        'arrow arrow--left ' + (currentSlide === 0 ? 'arrow--disabled' : '')
+      "
+      (click)="slider.prev()"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+      />
+    </svg>
+    <svg
+      *ngIf="slider"
+      [ngClass]="
+        'arrow arrow--right ' +
+        (slider.track.details.slides.length - 1 === currentSlide
+          ? 'arrow--disabled'
+          : '')
+      "
+      (click)="slider.next()"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+    </svg>
+
+
+</div>
+  <div class="dots">
+    <button
+      (click)="slider.moveToIdx(i)"
+      *ngFor="let slide of dotHelper; let i = index"
+      [class]="'dot ' + (i === currentSlide ? 'active' : '')"
+    ></button>
+</div>
+
+
+<app-movie-list-component></app-movie-list-component>

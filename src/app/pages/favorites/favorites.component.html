@@ -1,0 +1,48 @@
+<!-- <div class="movie-list">
+    <div *ngFor="let movie of favorites" class="movie-item">
+      <div class="card movie-card">
+        <div class="movie-poster" [ngStyle]="{'background-image': 'url(' + movie.banner_image + ')'}"> 
+          <button class="btn btn-danger" type="button" (click)="removeFromFavorites(movie)">Remove</button>
+        </div>
+        <div class="card-body">
+          <h3>{{ movie.title }}</h3>
+          <p>{{ movie.release_year }}</p>
+          <p>{{ movie.genre }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="pagination-wrapper">
+    <pagination-controls (pageChange)="onPageChange($event)" id="DEFAULT_PAGINATION_ID1"></pagination-controls>
+  </div> -->
+  
+
+  <div class="movie-list">
+    <div *ngIf="favorites.length > 0; else noFavorites">
+      <div *ngFor="let movie of favorites" class="movie-item">
+        <div class="card movie-card">
+          <div class="movie-poster" [ngStyle]="{'background-image': 'url(' + movie.banner_image + ')'}"> 
+            <button class="btn btn-danger" type="button" (click)="removeFromFavorites(movie)">Remove</button>
+          </div>
+          <div class="card-body">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ movie.release_year }}</p>
+            <p>{{ movie.genre }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noFavorites>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+          <div class="alert alert-info text-center">
+            <p>No favorite movies added yet.</p>
+          </div>
+        </div>
+      </ng-template>
+  </div>
+  
+  <div *ngIf="favorites.length > 0" class="pagination-wrapper">
+    <pagination-controls (pageChange)="onPageChange($event)" id="DEFAULT_PAGINATION_ID1"></pagination-controls>
+  </div>
+  

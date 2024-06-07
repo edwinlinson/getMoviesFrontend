@@ -1,0 +1,76 @@
+<!-- 
+<div class="movie-list">
+    <div *ngIf="result.length > 0; else noResults">
+      <div *ngFor="let movie of result" class="movie-item">
+        <div class="card movie-card">
+          <div class="movie-poster" [ngStyle]="{'background-image': 'url(' + movie.banner_image + ')'}">
+          </div>
+          <div class="card-body">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ movie.release_year }}</p>
+            <p>{{ movie.genre }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noResults>
+      <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="alert alert-info text-center">
+          <p>No results found.</p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  
+  <div *ngIf="result.length > 0" class="pagination-wrapper">
+    <pagination-controls (pageChange)="onPageChange($event)" id="DEFAULT_PAGINATION_ID2"></pagination-controls>
+  </div>
+   -->
+
+
+
+   <!-- <div *ngIf="searchTerm">
+    <h2>Results for "{{ searchTerm }}"</h2>
+    <div *ngIf="searchResults && searchResults.length > 0">
+      <ul>
+        <li *ngFor="let result of searchResults">{{ result.title }}</li>
+      </ul>
+    </div>
+    <div *ngIf="searchResults && searchResults.length === 0 && searchInitiated">
+      <p>No results found</p>
+    </div>
+    <div *ngIf="errorMessage">
+      <p>{{ errorMessage }}</p>
+    </div>
+  </div> -->
+
+  <div class="container mt-4" *ngIf="searchTerm">
+    <h2>Results for "{{ searchTerm }}"</h2>
+    <div *ngIf="searchResults && searchResults.length > 0; else noResults">
+      <div class="row">
+        <div *ngFor="let movie of searchResults" class="col-md-4">
+          <div class="card mb-4">
+            <div class="movie-poster" [ngStyle]="{'background-image': 'url(' + movie.banner_image + ')'}"> 
+                <button class="btn btn-danger" type="button" (click)="addToFavorite(movie)">❤</button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">{{ movie.release_year }}</p>
+              <p class="card-text">{{ movie.genre }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noResults>
+      <div class="alert alert-info text-center mt-4">
+        <p>No results found.</p>
+      </div>
+    </ng-template>
+    <div *ngIf="errorMessage" class="alert alert-danger text-center mt-4">
+      <p>{{ errorMessage }}</p>
+    </div>
+  </div>
+  
+  
+  

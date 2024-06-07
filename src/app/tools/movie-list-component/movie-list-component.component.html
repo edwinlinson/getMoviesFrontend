@@ -1,0 +1,38 @@
+<div class="movie-list">
+    <div *ngFor="let movie of movies" class="movie-item">
+      <div class="card movie-card">
+        <div class="movie-poster" [ngStyle]="{'background-image': 'url(' + movie.banner_image + ')'}"> 
+            <button class="btn btn-danger" type="button" (click)="addToFavorite(movie)">❤</button>
+        </div>
+        <!-- <img class="card-img-top movie-poster" [src]="movie.banner_image" alt="{{ movie.title }}" /> -->
+        <div class="card-body">
+          <h3>{{ movie.title }}</h3>
+          <p>{{ movie.release_year }}</p>
+          <p>{{ movie.genre }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="pagination-wrapper">
+    <pagination-controls (pageChange)="onPageChange($event)" id="DEFAULT_PAGINATION_ID1"></pagination-controls>
+</div>
+
+  
+<!--   
+<div class="card movie-card">
+    <div *ngFor="let movie of movies" class="movie-item">
+      <img class="card-img-top movie-poster" [src]="movie.banner_image" alt="{{ movie.title }}" />
+      <div class="favorite-icon">
+        <i class="fas fa-heart"></i>
+    </div>
+      <div class="card-body">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.release_year }}</p>
+        <p>{{ movie.genre }}</p>
+      </div>
+    </div>
+</div>
+  
+  <pagination-controls (pageChange)="onPageChange($event)">
+</pagination-controls> -->
+  
