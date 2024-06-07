@@ -1,27 +1,62 @@
-# GetMoviesFrontEnd
+# 🎬 Movie App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+## Overview
+Movie App is a web application that allows users to browse, search, and add movies to their favorites. The application is built using Spring Boot for the backend and Angular for the frontend. It uses an H2 database to store movie data.
 
-## Development server
+## Features
+- **🎥 Get Movies**: Retrieve the list of all movies.
+- **🔍 Search Movies**: Search for movies by title.
+- **➕ Add Movies**: Add new movies to the database.
+- **⭐ Add to Favorites**: Add movies to a list of favorites, stored locally in the browser.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
+- **Backend**: Spring Boot
+- **Frontend**: Angular
+- **Database**: H2 (in-memory database)
 
-## Code scaffolding
+## Endpoints
+### 🎥 Movies
+- **Get All Movies**
+  - **Endpoint**: `/api/movies`
+  - **Method**: `GET`
+  - **Description**: Retrieves the list of all movies.
+  
+- **Search Movies**
+  - **Endpoint**: `/api/movies/search`
+  - **Method**: `GET`
+  - **Query Parameter**: `title`
+  - **Description**: Searches for movies by title.
+  - **Example**: `/api/movies/search?title=Inception`
+  
+- **Add Movie**
+  - **Endpoint**: `/api/movie`
+  - **Method**: `POST`
+  - **Description**: Adds a new movie to the database.
+  - **Request Body**: JSON object containing movie details.
+  - **Example**: 
+    ```json
+    {
+      "title": "Inception",
+      "director": "Christopher Nolan",
+      "releaseYear": 2010
+    }
+    ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Frontend Functionality
+- **⭐ Add to Favorites**
+  - **Description**: Users can add movies to their favorites list. The favorites are stored in the browser's local storage.
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
+- ☕ Java 11 or higher
+- 🟢 Node.js and npm
+- ⚙️ Angular CLI
+- 🐍 Maven
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Backend Setup
+1. Clone the frontend repository:
+   ```bash
+   git clone https://github.com/edwinlinson/getMoviesFrontend 
+   cd movie-app-backend
+You can find **Back end source code at** https://github.com/edwinlinson/GetMovies
